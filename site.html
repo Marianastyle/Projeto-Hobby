@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hobby Origami</title>
+
+<!--Estilo-->
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {scroll-behavior: smooth;/*rolagem suave e animada*/
+}
+
+body{ 
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(248, 193, 202);
+    margin: 0;
+    padding: 0;
+    
+}
+
+/*Menu*/
+nav {
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    text-align: center;
+}
+
+
+nav a{
+    display: inline-block;
+    padding: 8px 20px ;
+    text-decoration: none;
+    font-weight: bold;
+    color:rgb(126, 241, 241) ;
+    transition: 0.2s;
+}
+
+
+.menu {
+    top:0;
+    position: fixed;
+    background: linear-gradient(90deg,#FF789C 0%, #FEBED4 100%)  ;
+    margin-right: 20px;
+    color: white;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    gap:30px;
+    display: flex;
+    text-decoration: none;
+}
+
+.item {
+    color:white;
+    text-decoration: none;
+}
+
+.apenas-img {
+    width: 700px;
+    height: auto;
+}
+
+/*quando passar o mouse*/
+nav a:hover {
+    background-color:rgb(228, 146, 173);
+    border-radius: 10px;
+}
+
+.content {
+    padding: 20px;
+    margin-top: 100px;
+
+}
+
+section {
+    text-align: center;
+    padding: 70px 30px;
+    
+}
+
+h1 {font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold; 
+    font-size: 40px;
+    color:rgb(140, 240, 240) }
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;}
+
+/*grid*/
+.grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/*card*/
+.card {
+    background-color: #fc86af;
+    border-radius: 17px;
+    box-shadow: 0 4px 16px rgb(0,0,0,0.25);
+    width: 700px;
+    height: 499px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+   
+ 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 267px;
+    border-radius: 17px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.card h2 {
+    color:white;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.card-pequeno {
+    width: 700px;
+    height: 357px;
+    padding: 20px;
+}
+
+.card a {
+    display:inline-block;
+    text-decoration: none;
+    background-color: rgb(140, 240, 240);
+    color:rgb(255, 124, 146);
+    padding: 8px 15px;
+    border-radius:10px ;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.card a:hover {
+    background-color:rgb(255, 124, 146);
+    color: white;
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 100px 20px 20px;
+    flex-wrap: wrap;
+   
+  
+}
+.tabela td.linha-completa {
+   
+    background-color:rgb(255, 124, 146) ;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.tabela td {
+    border: 2px solid #000;
+    padding: 10px;
+    text-align: left;
+}
+.tabela {
+    width: 810px;
+    height: 210px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color:#ffa6c5 ;
+}
+ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 20px;
+    text-align: left;
+    margin: 0 auto;
+    width: max-content;
+
+}
+
+ul li{
+    text-align: left;}
+
+.lista-beneficios {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao-link {
+    display: inline-block;
+    padding: 10 20px;
+    background-color:rgb(140, 240, 240);
+    width: 270px;
+    height: 60px;
+    color:black;
+    text-decoration: none;
+    border: none;
+    border-radius: 16px;
+    cursor:pointer;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/*animação botoes quando passar mouse*/
+.botao-link:hover {
+    color:white;
+    background-color:rgb(255, 124, 146);
+}
+
+
+.coluna {
+    flex: 1;
+    display: block;
+}
+
+/*rodapé*/
+.footer {
+    width: 100%;
+    background-color:rgb(255, 124, 146);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 20px 0;
+    margin: 0;
+    bottom: 0;
+    color: white;
+   
+}
+
+/*voltar para o topo*/
+
+.back-to-top {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    width: 160px;
+    text-decoration: none;
+    background-color:rgb(126, 241, 241);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    animation: pulando 1.2 ease-in-out infinitive;
+}
+
+/*animação do botão*/
+.back-to-top:hover {
+    background-color:rgb(255, 124, 146);
+    transform: scale(1.2);
+}
+
+</style>
+</head>
+
+<body>
+    <!--barra de navegação-->
+    <header>
+        <nav>
+          <div class="menu">
+            <a href="#Introducao" class="item">Introdução</a>
+            <a href="#Historia" class="item">História</a>
+            <a href="#Principaisdobraduras" class="item">Principais dobraduras</a>
+            <a href="#Dicasparainiciantes" class="item">Dicas para iniciantes</a>
+            <a href="#Beneficios" class="item">Benefícios</a>
+            <a href="#Origaminasdatascomemorativas" class="item">Origami nas datas comemorativas</a> 
+          </div> 
+        </nav>
+        
+    </header>
+
+    <main class="content">
+        <!--Seção introdução-->
+
+      <section id="Introducao">
+        <h1>Origami (dobradura)</h1>
+        <br>
+        <h2>Meu nome é Mariana e este site é dedicado a descrever um dos meus hobbies o Origami.
+         O origami originou-se no Japão, ori (significa "dobrar" e kami que significa "papel")  é a arte de dobradura no papel.</h2>
+        <br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Cranes_made_by_Origami_paper.jpg/1200px-Cranes_made_by_Origami_paper.jpg" class="apenas-img">
+      </section> 
+      
+      <!-- Seção História-->
+      <section id="Historia">
+        <br>
+    <div class="grid">
+        <div class="card card-pequeno">
+        <h1>História</h1>
+        <br>
+        <p>Os japoneses passaram a praticar o origami e a desenvolvê-lo, tanto que, no século seguinte, passam a incluí-lo como elemento de rituais xintoístas.
+           Nessa época, havia algumas regras para a criação de origamis. Os papéis não podiam ser colados ou recortados, pois os xintoístas entendiam que somente mantendo-os inteiros poderiam homenagear e honrar as forças divinas das árvores que os originaram.
+           Posteriormente, surgiram outros métodos menos rígidos, que permitiam o recorte e a colagem das dobraduras. É o caso do kirigami e o kirikomiorigami, em que pode-se juntar outras folhas de papel e fazer uso de cola.
+           Hoje em dia, o origami é muito comum entre as crianças, pois em 1876, as escolas japonesas incluíram a técnica como forma de aprendizagem.</p>
+           <br>
+           <a href="https://brasilescola.uol.com.br/artes/origami.htm" class="botao-link">Conheça mais a história do Origami</a>
+        </div>
+      </section>
+
+        <!--Seção Principais dobraduras-->
+        <section id="Principaisdobraduras">
+            <!--card Tsuru-->
+        <h1>Principais dobraduras</h1>
+        
+    <div class="container">
+        <div class="card">
+        <h1>Tsuru</h1>
+        <br>
+        <p>Tsuru é considerada uma ave sagrada do Japão. Simboliza saúde, sorte, felicidade, longevidade e fortuna, sendo assim um símbolo para grandes benefícios.</p>
+        <img src="https://i.ytimg.com/vi/VACnjqX4Upc/sddefault.jpg">
+        <a href="https://www.youtube.com/watch?v=VACnjqX4Upc" class="botao-link">Tutorial de como fazer o origami</a>
+        </div>
+        </div>
+
+            <!--card Sapo-->
+    <div class="container">
+        <div class="card">
+        <h1>Sapo</h1>
+        <br>
+        <p>Esse animal tem como simbologia a vontade de que coisas positivas voltem a acontecer. Por isso, ele é oferecido a pessoas doentes, como um desejo de melhora da saúde.</p>
+        <img src="https://i.ytimg.com/vi/OvTisVz4lTQ/sddefault.jpg">
+        <a href="https://www.youtube.com/watch?v=OvTisVz4lTQ" class="botao-link">Tutorial de como fazer o origami</a>
+        </div>
+        </div>
+
+           <!--card Borboleta-->
+    <div class="container">
+        <div class="card">
+        <h1>Borboleta</h1>
+        <br>
+        <p>O origami de borboleta é feito utilizando papel quadrado, primeiramente começando por dobras diagonais e horizontais para formar a borboleta. </p>
+        <img src="https://i.ytimg.com/vi/rlXH3_R_QO8/hqdefault.jpg">
+        <a href="https://www.youtube.com/watch?v=rlXH3_R_QO8" class="botao-link">Tutorial de como fazer o origami</a>
+        </div>
+        </div>
+
+          <!--card flor-->
+    <div class="container">
+        <div class="card">
+        <h1>Flor (Iris)</h1>
+        <br>
+        <p>Essa flor carrega como simbologia a sabedoria e, na cultura japonesa, é um belo presente de aniversário.
+         Presentar alguém com ela significa votos de saúde e sabedoria.</p>
+        <img src="https://i.ytimg.com/vi/Yw1bpMdyTrs/maxresdefault.jpg">
+        <a href="https://www.youtube.com/watch?v=Yw1bpMdyTrs" class="botao-link">Tutorial de como fazer o origami</a>
+        </div>
+        </div>
+        </section>
+
+        <!--Seção dicas para iniciantes-->
+        <section id="Dicasparainiciantes">
+            <h1>Dicas para iniciantes</h1>
+            <br>
+            <table class="tabela">
+                <tr>
+                    <td colspan="2" class="linha-completa">Dicas importantes</td>
+                </tr>
+
+                <tr>
+                    <td>Vinque bem</td>
+                    <td>Começe com modelos fáceis</td>
+                </tr>
+
+                <tr>
+                    <td>Faça devagar</td>
+                    <td>Utilize papel de boa qualidade</td>
+                </tr>
+
+                <tr>
+                    <td>Trabalhe em uma superfície plana</td>
+                    <td>Aprenda as dobras básicas</td>
+                </tr>
+            </table>
+        </section>
+
+        <!--Seção beneficios-->
+        <section id="Beneficios">
+            <h1>Benefícios</h1>
+            <br>
+            <ul class="lista-beneficios">
+                <li>Aumenta a concentração</li>
+                <br>
+                <li>Desenvolve a criatividade</li>
+                <br>
+                <li>Melhora a memória</li>
+                <br>
+                <li>Reduz o estresse</li>
+                <br>
+                <li>Reduz a ansiedade</li>
+                <br>
+                <li>Fortalece a autoestima</li>
+            </ul>
+        </section>
+
+        <!--Seção origami nas datas comemorativas-->
+
+        <section id="Origaminasdatascomemorativas">
+            <h1>Origami nas datas comemorativas</h1>
+            <br>
+            <h2>O dia mundial do origami é 11 de novembro</h2>
+            <br>
+            <p>Aqui temos alguns exemplos de origamis para fazer em datas comemorativas durante o ano.</p>
+            <br>
+            <br>
+
+
+            <!--Pascoa-->
+            <div class="card">
+                <h1>Páscoa: Origami de coelho</h1>
+                <br>
+                <img src="https://i.ytimg.com/vi/QAXcQ6mZefQ/hqdefault.jpg">
+                <a href="https://www.youtube.com/watch?v=QAXcQ6mZefQ" class="botao-link">Veja como fazer este origami</a>
+            </div>
+            <br>
+            <br>
+
+            <!--Dia das mães-->
+            <div class="card">
+                <h1>Dia das mães: Coração de origami</h1>
+                <br>
+                <img src="https://i.ytimg.com/vi/IIr8l4l0kN4/maxresdefault.jpg">
+                <a href="https://www.youtube.com/watch?v=IIr8l4l0kN4"class="botao-link">Veja como fazer este origami</a>
+            </div>
+            <br>
+            <br>
+
+            <!--Natal-->
+            <div class="card">
+                <h1>Natal: Árvore de Natal</h1>
+                <br>
+                <img src="https://i.ytimg.com/vi/kP6OrUjeobw/maxresdefault.jpg">
+                <a href="https://www.youtube.com/watch?v=kP6OrUjeobw" class="botao-link">Veja como fazer este origami</a>
+            </div>
+            <br>
+            <br>
+
+            <!--Festa junina-->
+            <div class="card">
+                <h1>Festa junina: Balão</h1>
+                <br>
+                <img src="https://i.ytimg.com/vi/Mm8VXmQAYRw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBoj4F_D6rqE4O0cahEtwj4xpN78A">
+                <a href="https://www.youtube.com/watch?v=Mm8VXmQAYRw" class="botao-link">Veja como fazer este origami</a>
+            </div>
+            <br>
+            <br>
+
+            <!--Halloween-->
+            <div class="card">
+            <h1>Halloween: Abóbora</h1>
+            <br>
+            <img src="https://i.ytimg.com/vi/-Ye3hf4QrJU/maxresdefault.jpg">
+            <a href="https://www.youtube.com/watch?v=-Ye3hf4QrJU" class="botao-link">Veja como fazer este origami</a>
+            </div>
+        </section>
+    </div>
+    </main>
+    <footer class="footer">
+        Hobby Origami
+    </footer>
+
+    <a href="#Introducao" class="back-to-top">Voltar para o topo</a>
+   
+</body>
+</html>
